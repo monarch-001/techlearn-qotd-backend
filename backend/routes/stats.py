@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify
-from data.store import submissions
+from backend.data.store import submissions
 
 stats_bp = Blueprint("stats", __name__)
 
@@ -17,3 +17,4 @@ def get_stats():
         "correctAttempts": correct,
         "successRate": success_rate
     }), 200
+
