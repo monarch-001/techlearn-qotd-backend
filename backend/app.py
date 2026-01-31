@@ -6,12 +6,10 @@ from backend.routes.leaderboard import leaderboard_bp
 from backend.routes.meta import meta_bp
 from backend.routes.users import users_bp
 
-
 API_PREFIX = "/api/v1"
 
 def create_app():
     app = Flask(__name__)
-    
 
     app.register_blueprint(qotd_bp, url_prefix=API_PREFIX)
     app.register_blueprint(submission_bp, url_prefix=API_PREFIX)
@@ -20,14 +18,10 @@ def create_app():
     app.register_blueprint(meta_bp, url_prefix=API_PREFIX)
     app.register_blueprint(users_bp, url_prefix=API_PREFIX)
 
-
-
     return app
 
-if __name__ == "__main__":
-    app = create_app()
-    app.run(debug=True)
+# 👇 THIS IS THE CRITICAL LINE
+app = create_app()
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
-
+    app.run(host="0.0.0.0", port=5000, debug=True)
