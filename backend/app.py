@@ -1,10 +1,10 @@
 from flask import Flask
-from routes.qotd import qotd_bp
-from routes.submission import submission_bp
-from routes.stats import stats_bp
-from routes.leaderboard import leaderboard_bp
-from routes.meta import meta_bp
-from routes.users import users_bp
+from backend.routes.qotd import qotd_bp
+from backend.routes.submission import submission_bp
+from backend.routes.stats import stats_bp
+from backend.routes.leaderboard import leaderboard_bp
+from backend.routes.meta import meta_bp
+from backend.routes.users import users_bp
 
 
 API_PREFIX = "/api/v1"
@@ -30,3 +30,4 @@ if __name__ == "__main__":
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
+
