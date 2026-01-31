@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify
-from data.store import submissions
+from backend.data.store import submissions
 
 leaderboard_bp = Blueprint("leaderboard", __name__)
 
@@ -28,3 +28,4 @@ def leaderboard():
     )
 
     return jsonify(leaderboard), 200
+
