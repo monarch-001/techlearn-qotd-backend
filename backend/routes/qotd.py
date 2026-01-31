@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify
-from data.store import qotd
+from backend.data.store import qotd
 
 qotd_bp = Blueprint("qotd", __name__)
 
@@ -20,3 +20,4 @@ def get_daily_challenge():
 @qotd_bp.route("/daily-challenge/hints", methods=["GET"])
 def get_hints():
     return jsonify({"hints": qotd["hints"]}), 200
+
